@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HOTELITUS - Sistema de Reserva de Habitaciones">
+    <title>HOTELITUS</title>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+
+<body>
+
+    
+<!-- Encabezado con Logo y Navegación -->
+<header class="bg-dark text-white sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#" style="margin-left: 50px;">
+            <img src="images/logo/WhatsApp Image 2024-10-17 at 22.59.36.jpeg" alt="Logo de HOTELITUS" class="img-fluid rounded-circle" style="max-height: 80px; border: 4px solid rgba(255, 255, 255, 0.8);">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav" style="list-style-type: none; padding-left: 0;">
+                <li class="nav-item">
+                    <a class="nav-link text-uppercase font-weight-bold" href="#habitaciones" onclick="toggleHabitacionDetails(event)">
+                        <div class="btn btn-primary mx-2 btn-hover" style="font-family: 'Roboto Slab', serif; font-size: 1.1rem;">Habitaciones</div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-uppercase font-weight-bold" href="#servicios">
+                        <div class="btn btn-primary mx-2 btn-hover" style="font-family: 'Roboto Slab', serif; font-size: 1.1rem;">Servicios</div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-uppercase font-weight-bold" href="#ubicacion">
+                        <div class="btn btn-primary mx-2 btn-hover" style="font-family: 'Roboto Slab', serif; font-size: 1.1rem;">Ubicación</div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-uppercase font-weight-bold" href="#reserva">
+                        <div class="btn btn-primary mx-2 btn-hover" style="font-family: 'Roboto Slab', serif; font-size: 1.1rem;">Reservar</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<!-- Agregar Google Fonts para la fuente Roboto Slab -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400&display=swap" rel="stylesheet">
+
+    <!-- Contenido Principal -->
+    <main class="container mt-4">
+        <!-- Sección Habitaciones -->
+        
+        <section id="habitaciones" class="habitaciones-section">
+            <div class="container">
+                <div class="habitacion-content">
+                    <!-- Título con decoración -->
+                    <div class="section-header">
+                        <h2 class="section-title hover-underline">Nuestras Habitaciones</h2>
+                        <div class="section-subtitle">Descubre el confort y la elegancia</div>
+                    </div>
+        
+                    <!-- Carrusel -->
+                    <div class="carousel-container">
+                        <div id="carouselHabitaciones" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="images/habitacion/Habitacion 1.jpg" class="d-block w-100" alt="Habitación 1">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="images/habitacion/Habitacion 2.jpg" class="d-block w-100" alt="Habitación 2">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="images/habitacion/Habitacion 3.jpg" class="d-block w-100" alt="Habitación 3">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="images/habitacion/Habitacion 4.jpg" class="d-block w-100" alt="Habitación 4">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="images/habitacion/Habitacion 5.jpg" class="d-block w-100" alt="Habitación 5">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselHabitaciones" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Anterior</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselHabitaciones" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Siguiente</span>
+                            </button>
+                        </div>
+                    </div>
+        
+                    <!-- Características principales -->
+                    <div class="habitacion-features">
+                        <div class="features-grid">
+                            <div class="feature-item">
+                                <i class="fas fa-bed"></i>
+                                <h3>Cama King Size</h3>
+                                <p>Disfruta de un descanso excepcional en nuestra amplia cama con sábanas de alta calidad</p>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-bath"></i>
+                                <h3>Baño Privado</h3>
+                                <p>Baño completo con ducha, amenities premium y toallas suaves</p>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-tv"></i>
+                                <h3>Smart TV</h3>
+                                <p>Televisor de última generación con acceso a plataformas de streaming</p>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-snowflake"></i>
+                                <h3>Aire Acondicionado</h3>
+                                <p>Sistema de climatización individual para tu máximo confort</p>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Información detallada -->
+                    <div class="habitacion-info">
+                        <div class="info-card">
+                            <h3>Detalles de la Habitación</h3>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <ul class="info-list">
+                                        <li><i class="fas fa-ruler-combined"></i> 25 m² de espacio</li>
+                                        <li><i class="fas fa-wifi"></i> Internet de alta velocidad por cable y WiFi</li>
+                                        <li><i class="fas fa-phone-alt"></i> Teléfono con línea directa</li>
+                                        <li><i class="fas fa-concierge-bell"></i> Servicio a la habitación</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="info-list">
+                                        <li><i class="fas fa-desktop"></i> Escritorio de trabajo</li>
+                                        <li><i class="fas fa-archive"></i> Espacioso armario</li>
+                                        <li><i class="fas fa-lock"></i> Caja fuerte digital</li>
+                                        <li><i class="fas fa-bell"></i> Servicio de despertador</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Restricciones -->
+                    <div class="restricciones mt-5">
+                        <div class="info-card restriction-card">
+                            <h3><i class="fas fa-exclamation-circle"></i> Información Importante</h3>
+                            <div class="restriction-grid">
+                                <div class="restriction-item">
+                                    <i class="fas fa-smoking-ban"></i>
+                                    <p>Prohibido fumar en toda la habitación</p>
+                                </div>
+                                <div class="restriction-item">
+                                    <i class="fas fa-paw"></i>
+                                    <p>No se admiten mascotas</p>
+                                </div>
+                                <div class="restriction-item">
+                                    <i class="fas fa-volume-mute"></i>
+                                    <p>Respetar el descanso de otros huéspedes</p>
+                                </div>
+                                <div class="restriction-item">
+                                    <i class="fas fa-user-friends"></i>
+                                    <p>Máximo 4 personas por habitación</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Separador gráfico -->
+        <div class="border-top my-5"></div>
+
+        
+        <section id="servicios" class="mt-5">
+            <div class="container">
+                <div class="content-box rounded shadow p-4">
+                    <div class="section-title">
+                        <h2 class="text-center mb-4">Nuestros Servicios</h2>
+                    </div>
+                    <div class="row row-cols-1 row-cols-md-3 justify-content-center g-4">
+                        <!-- Servicio 1 -->
+                        <div class="col">
+                            <div class="card shadow-sm service-card">
+                                <img src="images/buffett/Desayuno 1.jpg" class="card-img-top" alt="Desayuno gratuito">
+                                <div class="card-body">
+                                    <h5 class="card-title">Desayuno gratuito</h5>
+                                    <p class="card-text">Disfruta de nuestro delicioso desayuno cada mañana.</p>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <!-- Servicio 2 -->
+                        <div class="col">
+                            <div class="card shadow-sm service-card">
+                                <img src="images/tours/Tour 3.jpg" class="card-img-top" alt="Convenio con empresa de turismo">
+                                <div class="card-body">
+                                    <h5 class="card-title">Convenio con empresa de turismo</h5>
+                                    <p class="card-text">Explora Potrerillos con las mejores guías turísticas.</p>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <!-- Servicio 3 -->
+                        <div class="col">
+                            <div class="card shadow-sm service-card">
+                                <img src="images/wifi/wifi.jpg" class="card-img-top" alt="Acceso a Internet">
+                                <div class="card-body">
+                                    <h5 class="card-title">Acceso a Internet</h5>
+                                    <p class="card-text">Conéctate con nuestro servicio de WiFi gratuito.</p>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <!-- Servicio 4 -->
+                        <div class="col">
+                            <div class="card shadow-sm service-card">
+                                <img src="images/aparcamiento.jpg" class="card-img-top" alt="Aparcamiento para residentes">
+                                <div class="card-body">
+                                    <h5 class="card-title">Aparcamiento para residentes</h5>
+                                    <p class="card-text">Obtenga exclusivamente un lugar en nuestro amplio estacionamiento.</p>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <!-- Servicio 5 -->
+                        <div class="col">
+                            <div class="card shadow-sm service-card">
+                                <img src="images/serviciolavanderia.jpg" class="card-img-top" alt="Servicio de lavandería">
+                                <div class="card-body">
+                                    <h5 class="card-title">Servicio de lavandería</h5>
+                                    <p class="card-text">Ofrecemos lavandería y artículos de aseo personalizados para tu comodidad.</p>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <!-- Servicio 6 -->
+                        <div class="col">
+                            <div class="card shadow-sm service-card">
+                                <img src="images/pileta1.jpeg" class="card-img-top" alt="Posee pileta">
+                                <div class="card-body">
+                                    <h5 class="card-title">Posee pileta</h5>
+                                    <p class="card-text">Disfruta de nuestra cálida pileta al aire libre.</p>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <!-- Servicio 7 -->
+                        <div class="col">
+                            <div class="card shadow-sm service-card">
+                                <img src="images/seguridad.jpg" class="card-img-top" alt="Seguridad privada">
+                                <div class="card-body">
+                                    <h5 class="card-title">Seguridad privada</h5>
+                                    <p class="card-text">Ofrecemos seguridad privada para garantizar tu tranquilidad durante la estancia.</p>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <!-- Servicio 8 -->
+                        <div class="col">
+                            <div class="card shadow-sm service-card">
+                                <img src="images/seguropago.jpg" class="card-img-top" alt="Seguro de pago adicional">
+                                <div class="card-body">
+                                    <h5 class="card-title">Seguro de pago adicional</h5>
+                                    <p class="card-text">Ofrecemos seguridad privada para garantizar tu tranquilidad durante la estancia.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="border-top my-5"></div>
+
+        <!-- Sección Ubicación -->
+        <section id="ubicacion" class="mt-5">
+            <div class="location-container">
+                <div class="location-header">
+                    <h2 class="fade-in">Ubicación de HOTELITUS</h2>
+                    <p class="subtitle slide-in">Descubre nuestro paraíso en Potrerillos, Mendoza</p>
+                </div>
+                
+                <div class="location-content">
+                    <div class="map-container zoom-in">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d3348.0123743744316!2d-69.1758936!3d-32.9506827!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzLCsDU3JzAyLjkiUyA2OcKwMTAnMjguOSJX!5e0!3m2!1ses-419!2sar!4v1729827049885!5m2!1ses-419!2sar" 
+                            width="100%" 
+                            height="450" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+        
+                    <div class="contact-info slide-in-right">
+                        <h4>Datos importantes</h4>
+                        <div class="info-card">
+                            <div class="info-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div class="info-text">
+                                    <strong>Dirección:</strong>
+                                    <a href="https://maps.app.goo.gl/ah57hcFB2RHHExk26" target="_blank" class="hover-effect">
+                                        Ruta Provincial 82, Km 38 - Valle Lago Potrerillos - Luján de Cuyo, Mendoza - Argentina - CP: 5507
+                                    </a>
+                                </div>
+                            </div>
+        
+                            <div class="info-item">
+                                <i class="fas fa-phone"></i>
+                                <div class="info-text">
+                                    <strong>Teléfonos:</strong>
+                                    <div class="contact-links">
+                                        <a href="tel:4303348" class="hover-effect">4303348</a>
+                                        <span class="separator">o</span>
+                                        <a href="https://wa.me/2612345678" target="_blank" class="hover-effect whatsapp-link">
+                                            <i class="fab fa-whatsapp"></i>2612345678
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <div class="info-item">
+                                <i class="fas fa-envelope"></i>
+                                <div class="info-text">
+                                    <strong>Email:</strong>
+                                    <a href="mailto:info@hotelitus.com.ar" target="_blank" class="hover-effect">
+                                        info@hotelitus.com.ar
+                                    </a>
+                                </div>
+                            </div>
+        
+                            <div class="info-item">
+                                <i class="fab fa-instagram"></i>
+                                <div class="info-text">
+                                    <strong>Instagram:</strong>
+                                    <a href="https://www.instagram.com/" target="_blank" class="hover-effect">
+                                        @hotelitus.mendoza
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+        <!-- Separador gráfico -->
+        <div class="border-top my-5"></div>
+
+        <!-- Sección Reserva -->
+       
+        <section id="reserva" class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="text-center mb-4">Solicitud de Reserva</h2>
+                            <p class="text-muted text-center">Completa el formulario para realizar tu reserva</p>
+
+                            <form class="needs-validation" novalidate>
+                                <!-- Nombre -->
+                                <div class="mb-3">
+                                    <label for="inputNombre">Nombre completo</label>
+                                    <input type="text" class="form-control" id="inputNombre" name="nombre" required>
+                                    <div class="invalid-feedback">
+                                        Por favor, introduce tu nombre completo.
+                                    </div>
+                                </div>
+
+                                <!-- DNI -->
+                                <div class="mb-3">
+                                    <label for="inputDNI">DNI</label>
+                                    <input type="text" class="form-control" id="inputDNI" name="dni" required>
+                                    <div class="invalid-feedback">
+                                        Por favor, introduce un DNI válido.
+                                    </div>
+                                </div>
+
+                                <!-- Email -->
+                                <div class="mb-3">
+                                    <label for="inputEmail">Email</label>
+                                    <input type="email" class="form-control" id="inputEmail" name="email" required>
+                                    <div class="invalid-feedback">
+                                        Por favor, introduce un email válido.
+                                    </div>
+                                </div>
+
+                                <!-- Teléfono -->
+                                <div class="mb-3">
+                                    <label for="inputTelefono">Teléfono</label>
+                                    <input type="tel" class="form-control" id="inputTelefono" name="telefono" pattern="[0-9]+" required>
+                                    <div class="invalid-feedback">
+                                        Por favor, introduce un número de teléfono válido (solo números).
+                                    </div>
+                                </div>
+
+                                <!-- Fechas -->
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <div class="date-container">
+                                            <label for="inputFechaEntrada">Fecha de entrada</label>
+                                            <input type="date" class="form-control" id="inputFechaEntrada" name="fechaEntrada" required>
+                                            <div class="invalid-feedback">
+                                                Por favor, seleccione una fecha de entrada válida.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <div class="date-container">
+                                            <label for="inputFechaSalida">Fecha de salida</label>
+                                            <input type="date" class="form-control" id="inputFechaSalida" name="fechaSalida" required>
+                                            <div class="invalid-feedback">
+                                                Por favor, seleccione una fecha de salida válida.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Huéspedes -->
+                                <div class="mb-3">
+                                    <label for="selectHuespedes">Número de huéspedes</label>
+                                    <select class="form-control" id="selectHuespedes" name="huespedes" required>
+                                        <option value="">Seleccionar...</option>
+                                        <option value="1">1 persona</option>
+                                        <option value="2">2 personas</option>
+                                        <option value="3">3 personas</option>
+                                        <option value="4">4 personas</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Por favor, seleccione el número de huéspedes.
+                                    </div>
+                                </div>
+
+                                <!-- Comentarios -->
+                                <div class="mb-3">
+                                    <label for="textareaComentarios">Comentarios adicionales</label>
+                                    <textarea class="form-control" id="textareaComentarios" name="comentarios" rows="3"></textarea>
+                                </div>
+
+                                <!-- Términos y condiciones -->
+                                <div class="mb-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="checkTerminos" required>
+                                        <label class="form-check-label" for="checkTerminos">
+                                            Acepto los <a href="https://www.argentina.gob.ar/terminos-y-condiciones" target="_blank">términos y condiciones</a></label>
+                                        </label>
+                                        <div class="invalid-feedback">
+                                            Debes aceptar los términos y condiciones para continuar.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Botón de envío -->
+                                <div class="text-center">
+                                    <button class="btn btn-primary" type="submit">Enviar Solicitud de Reserva</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    
+    <!-- Pie de Página -->
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <p>&copy; 2024 HOTELITUS. Todos los derechos reservados.</p>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Popper.js (requerido para Bootstrap) -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+</body>
+
+</html>
