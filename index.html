@@ -16,36 +16,52 @@
     
 <!-- Encabezado con Logo y Navegación -->
 <header class="bg-dark text-white sticky-top">
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <a class="navbar-brand" href="#" style="margin-left: 50px;">
-            <img src="images/logo/WhatsApp Image 2024-10-17 at 22.59.36.jpeg" alt="Logo de HOTELITUS" class="img-fluid rounded-circle" style="max-height: 80px; border: 4px solid rgba(255, 255, 255, 0.8);">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav" style="list-style-type: none; padding-left: 0;">
-                <li class="nav-item">
-                    <a class="nav-link text-uppercase font-weight-bold" href="#habitaciones" onclick="toggleHabitacionDetails(event)">
-                        <div class="btn btn-primary mx-2 btn-hover" style="font-family: 'Roboto Slab', serif; font-size: 1.1rem;">Habitaciones</div>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-uppercase font-weight-bold" href="#servicios">
-                        <div class="btn btn-primary mx-2 btn-hover" style="font-family: 'Roboto Slab', serif; font-size: 1.1rem;">Servicios</div>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-uppercase font-weight-bold" href="#ubicacion">
-                        <div class="btn btn-primary mx-2 btn-hover" style="font-family: 'Roboto Slab', serif; font-size: 1.1rem;">Ubicación</div>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-uppercase font-weight-bold" href="#reserva">
-                        <div class="btn btn-primary mx-2 btn-hover" style="font-family: 'Roboto Slab', serif; font-size: 1.1rem;">Reservar</div>
-                    </a>
-                </li>
-            </ul>
+    <nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
+        <div class="container-fluid">
+            <div class="navbar-brand-container">
+                <a class="navbar-brand" href="#">
+                    <img src="images/logo/WhatsApp Image 2024-10-17 at 22.59.36.jpeg" 
+                         alt="Logo de HOTELITUS" 
+                         class="img-fluid rounded-circle logo-animation">
+                </a>
+            </div>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav nav-animation">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#habitaciones">
+                            <div class="btn btn-outline-light nav-btn" data-text="Habitaciones">
+                                <i class="fas fa-bed"></i> Habitaciones
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#servicios">
+                            <div class="btn btn-outline-light nav-btn" data-text="Servicios">
+                                <i class="fas fa-concierge-bell"></i> Servicios
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#ubicacion">
+                            <div class="btn btn-outline-light nav-btn" data-text="Ubicación">
+                                <i class="fas fa-map-marker-alt"></i> Ubicación
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#reserva">
+                            <div class="btn nav-btn btn-reserva" data-text="Reservar">
+                                <i class="fas fa-calendar-check"></i> Reservar
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
 </header>
@@ -55,14 +71,14 @@
 
     <!-- Contenido Principal -->
     <main class="container mt-4">
+
         <!-- Sección Habitaciones -->
-        
         <section id="habitaciones" class="habitaciones-section">
             <div class="container">
                 <div class="habitacion-content">
                     <!-- Título con decoración -->
                     <div class="section-header">
-                        <h2 class="section-title hover-underline">Nuestras Habitaciones</h2>
+                        <h1 class="servicios-titulo">Nuestras Habitaciones</h1>
                         <div class="section-subtitle">Descubre el confort y la elegancia</div>
                     </div>
         
@@ -179,12 +195,12 @@
         <!-- Separador gráfico -->
         <div class="border-top my-5"></div>
 
-        
+        <!-- Sección Servicios -->
         <section id="servicios" class="mt-5">
             <div class="container">
                 <div class="content-box rounded shadow p-4">
-                    <div class="section-title">
-                        <h2 class="text-center mb-4">Nuestros Servicios</h2>
+                    <div class="text-center">
+                        <h1 class="servicios-titulo">Nuestros Servicios</h1>
                     </div>
                     <div class="row row-cols-1 row-cols-md-3 justify-content-center g-4">
                         <!-- Servicio 1 -->
@@ -279,13 +295,14 @@
             </div>
         </section>
 
+        <!-- Separador gráfico -->
         <div class="border-top my-5"></div>
 
         <!-- Sección Ubicación -->
         <section id="ubicacion" class="mt-5">
             <div class="location-container">
                 <div class="location-header">
-                    <h2 class="fade-in">Ubicación de HOTELITUS</h2>
+                    <h2 class="servicios-titulo">Ubicación de HOTELITUS</h2>
                     <p class="subtitle slide-in">Descubre nuestro paraíso en Potrerillos, Mendoza</p>
                 </div>
                 
@@ -356,8 +373,7 @@
         <!-- Separador gráfico -->
         <div class="border-top my-5"></div>
 
-        <!-- Sección Reserva -->
-       
+        <!-- Sección Reserva -->      
         <section id="reserva" class="container">
             <div class="row justify-content-center">
                 <div class="col-md-8">
@@ -397,7 +413,7 @@
                                 <!-- Teléfono -->
                                 <div class="mb-3">
                                     <label for="inputTelefono">Teléfono</label>
-                                    <input type="tel" class="form-control" id="inputTelefono" name="telefono" pattern="[0-9]+" required>
+                                    <input type="tel" class="form-control" id="inputTelefono" name="telefono"  required>
                                     <div class="invalid-feedback">
                                         Por favor, introduce un número de teléfono válido (solo números).
                                     </div>

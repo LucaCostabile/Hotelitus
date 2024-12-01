@@ -4739,3 +4739,53 @@ document.addEventListener('DOMContentLoaded', function() {
       form.classList.remove('was-validated');
   });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+  const dniInput = document.getElementById('inputDNI');
+  
+  dniInput.addEventListener('input', function(e) {
+      // Reemplazar cualquier cosa que no sea un número
+      this.value = this.value.replace(/[^0-9]/g, '');
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  const telefonoInput = document.getElementById('inputTelefono');
+  
+  telefonoInput.addEventListener('input', function(e) {
+      // Reemplazar cualquier cosa que no sea un número
+      this.value = this.value.replace(/[^0-9]/g, '');
+  });
+});
+
+// Función para cerrar el menú al seleccionar una sección
+function closeNavbar() {
+  const navbarCollapse = document.getElementById('navbarNav');
+  const navbarToggler = document.querySelector('.navbar-toggler');
+
+  // Cerrar el menú si está abierto
+  if (navbarCollapse.classList.contains('show')) {
+      navbarCollapse.classList.remove('show');
+      navbarToggler.setAttribute('aria-expanded', 'false');
+  }
+}
+
+// Cierra el menú al hacer clic en el botón de toggler
+document.querySelector('.navbar-toggler').addEventListener('click', function() {
+  const navbarCollapse = document.getElementById('navbarNav');
+  const isExpanded = this.getAttribute('aria-expanded') === 'true';
+
+  // Cambiar el estado del menú
+  if (isExpanded) {
+      navbarCollapse.classList.remove('show');
+      this.setAttribute('aria-expanded', 'false');
+  } else {
+      navbarCollapse.classList.add('show');
+      this.setAttribute('aria-expanded', 'true');
+  }
+});
+
+// Cierra el menú al hacer clic en un enlace
+document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+  link.addEventListener('click', closeNavbar);
+});
